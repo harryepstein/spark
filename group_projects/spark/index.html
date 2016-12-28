@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Spark</title>
+<html lang="en">
+  <head>
+    <style>
+    .flex {
+        /* basic styling */
+        width: 350px;
+        height: 200px;
+        border: 1px solid #555;
+        font: 14px Arial;
 
-</head>
-<body>
+        /* flexbox setup */
+        display: flex;
+        flex-direction: row;
+    }
 
-</body>
+    .flex > div {
+        flex: 1 1 auto;
+        width: 30px; /* To make the transition work nicely. (Transitions to/from
+                        "width:auto" are buggy in Gecko and Webkit, at least.
+                        See http://bugzil.la/731886 for more info.) */
+        transition: width 0.7s ease-out;
+    }
+
+    /* colors */
+    .flex > div:nth-child(1){ background: #BF0A30; }
+    .flex > div:nth-child(2){ background: #002868; }
+    .flex > div:nth-child(3){ background: #FFFFFF; }
+
+    .flex > div:hover {
+        width: 200px;
+    }
+   
+    </style> 
+  </head>
+  <body>
+    <h1>New Flexbox</h1>
+    <div class="flex">
+      <div>uno</div>
+      <div>due</div>
+      <div>tre</div>
+    </div>
+  </body>
 </html>
